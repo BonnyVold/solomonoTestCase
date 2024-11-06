@@ -4,3 +4,7 @@ body {
   display: block;
 }
 
+.search_inputs {
+  display: flex;
+  vertical-align: middle;
+}

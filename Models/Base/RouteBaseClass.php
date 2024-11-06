@@ -7,13 +7,19 @@ class RouteBaseClass {
 
   private String $routeName;
   private String $url;
+  private array $callback;
 
-  public function __construct(string $url, function|string|array $callback){
-    var_dump('Route Base!');
+  public function __construct(string $url, array $callback){
+    $this->url = $url;
+    $this->callback = $callback;
   }
 
-  static function get(string $url, function|string|array $callback):self{
-    return self::__construct($url, $callback);
+  public function getUrl(): string{
+    return $this->url;
+  }
+
+  public function getCallback(): array{
+    return $this->callback;
   }
 
 }

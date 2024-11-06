@@ -1,10 +1,11 @@
 <?php
 
-use \Base\Route;
-use controllers;
+use Base\Route\RouteClass as Route;
+use Base\Route\Router;
 
-var_dump(Route::get('/main', [controllers\MainController, 'main']));
+$router = new Router();
 
+$router->push(new Route('/main', [\controllers\MainController::class, 'main']));
 
-
-
+$router->getList();
+die();

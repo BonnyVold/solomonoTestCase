@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Base\Route;
 
@@ -10,8 +10,8 @@ class RouteClass extends RouteBaseClass {
   private string $path;
   private $callback;
 
-  public function __construct(string $url, function|array|string $callback){
-    $this->url = $url;
-    $this->callback = $callback;
+  public function __construct(string $url, array|string $callback){
+    parent::__construct($url, $callback);
   }
+
 }

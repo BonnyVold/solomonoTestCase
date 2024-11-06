@@ -1,4 +1,4 @@
-<?php 
+<?php
 define("ROOT_DIR", $_SERVER['DOCUMENT_ROOT']);
 define("CURRENT_DIR", dirname(__FILE__));
 define("MODEL_BASE_DIR", dirname(__FILE__).'/../Models/Base');
@@ -6,6 +6,7 @@ define("MODEL_DIR", dirname(__FILE__).'/../Models');
 define("CONTROLLERS_DIR", dirname(__FILE__).'/../controllers');
 define("DB_DIR", dirname(__FILE__).'/../DB');
 define("ROUTE_DIR", dirname(__FILE__).'/../routing');
+define("ROUTES_FILE_NAME", 'routes.php');
 
 $dirListWithClasses = array(
   MODEL_BASE_DIR,
@@ -20,7 +21,7 @@ function load_classes($listDirWithClasses): Void {
     foreach ($fileList as $fileName) {
       if (preg_match($classPattern, $fileName)){
         try {
-          require_once $dir.DIRECTORY_SEPARATOR.$fileName; 
+          require_once $dir.DIRECTORY_SEPARATOR.$fileName;
         }
         catch(Exception $exp){
           var_dump($exp);
@@ -30,9 +31,9 @@ function load_classes($listDirWithClasses): Void {
   }
 }
 
-function load_routes($)
+function load_routes($routesPath){
+  include_once $routesPath.DIRECTORY_SEPARATOR.ROUTES_FILE_NAME;
+}
 
 load_classes($dirListWithClasses);
-
-
-
+load_routes(ROUTE_DIR);

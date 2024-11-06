@@ -9,7 +9,7 @@
   </header>
 
   <body>
+    <div id="header"> <?php require_once "view/header.php" ?> </div>
   </body>
 
-</html>  
-
+</html>

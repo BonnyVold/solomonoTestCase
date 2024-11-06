@@ -2,14 +2,13 @@
 
 namespace app;
 use Base;
-use 
 
 class App {
 
   private array $config;
   private Router $router;
 
-  public function __construct(array $config){ 
+  public function __construct(array $config){
     $this->config = $config;
   }
 
@@ -18,5 +17,6 @@ class App {
   }
 
   public function run(){
+
   }
 }
